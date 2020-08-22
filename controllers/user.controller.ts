@@ -1,10 +1,15 @@
+import { db } from "../config/db.ts";
+
+db.setCollection("users");
+
 export const UserController = {
   Query: {
-    getUser: (parent: any, { id }: any, context: any, info: any) => {
-      return {
-        firstName: "wooseok",
-        lastName: "lee",
-      };
+    getUsers: async (parent: any, { id }: any, context: any, info: any) => {
+      let users: any[] = [];
+      await db.getAll().then((element) => {
+        element.map((user) => users.push(user));
+      });
+      return users;
     },
   },
   Mutation: {

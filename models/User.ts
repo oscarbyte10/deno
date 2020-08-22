@@ -16,7 +16,7 @@ export const User = (gql as any)`
   }
 
   extend type Query {
-    getUser(id: String): User 
+    getUsers: [User] 
   }
 
   extend type Mutation {
