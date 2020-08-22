@@ -2,13 +2,13 @@ import {
   Application,
   Router,
   RouterContext,
-} from "https://deno.land/x/oak@v6.0.2/mod.ts";
+} from "./config/deps.ts";
 
 import {
   applyGraphQL,
   gql,
   GQLError,
-} from "https://deno.land/x/oak_graphql@0.6.1/mod.ts";
+} from "./config/deps.ts";
 
 const app = new Application();
 const port = 8080;
