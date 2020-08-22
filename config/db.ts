@@ -32,6 +32,10 @@ export class DatabaseConnection {
       .find((
         data: any,
       ) => data);
+
+  insertOne = async (value: any) =>
+    await this.client.database(this.dbName).collection(this.collection)
+      .insertOne({ ...value });
 }
 const db = new DatabaseConnection();
 export { db };

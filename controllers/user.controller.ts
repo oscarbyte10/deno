@@ -15,10 +15,11 @@ export const UserController = {
   Mutation: {
     setUser: (
       parent: any,
-      { input: { firstName, lastName } }: any,
+      { input }: any,
       context: any,
       info: any,
     ) => {
+      db.insertOne(input);
       return {
         done: true,
       };
